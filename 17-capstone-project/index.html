@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Dashboard — Capstone Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Structure only. No inline JS or CSS anywhere in this file — every
+       behaviour lives in js/*.js, every style lives in style.css. -->
+  <header>
+    <div>
+      <h1>Daily Dashboard</h1>
+      <div id="greeting"></div>
+    </div>
+    <button id="theme-toggle">Toggle theme</button>
+  </header>
+
+  <main>
+    <!-- Weather panel: folders 07/10 (fetch, third-party API) -->
+    <section class="panel" id="weather-panel">
+      <h2>Weather</h2>
+      <form id="weather-form">
+        <input type="text" id="city-input" placeholder="City" value="Cape Town">
+        <button type="submit">Search</button>
+      </form>
+      <p class="status-text" id="weather-status"></p>
+      <div id="weather-output"></div>
+    </section>
+
+    <!-- Quote panel: folders 09/13/14/15 (AJAX pattern, timers, promises) -->
+    <section class="panel" id="quote-panel">
+      <h2>Quote of the Moment</h2>
+      <p class="quote-text" id="quote-text">Loading...</p>
+      <p class="quote-author" id="quote-author"></p>
+      <button class="secondary" id="quote-refresh">Refresh now</button>
+      <p class="status-text">Auto-refreshes every 30 seconds.</p>
+    </section>
+
+    <!-- Notes panel: folders 06/08/12 (JSON, DOM, localStorage) -->
+    <section class="panel" id="notes-panel">
+      <h2>Notes</h2>
+      <form id="note-form">
+        <input type="text" id="note-input" placeholder="Add a note">
+        <button type="submit">Add</button>
+      </form>
+      <ul id="notes-list"></ul>
+    </section>
+  </main>
+
+  <!-- Loaded in dependency order: storage/api/models are used by app.js -->
+  <script src="js/storage.js" defer></script>
+  <script src="js/api.js" defer></script>
+  <script src="js/models.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

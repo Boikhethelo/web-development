@@ -1,0 +1,45 @@
+/* style.css — Client-side storage demo */
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.panel {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0 0.2rem 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+select, input[type="range"] {
+  width: 100%;
+}
+
+/* Applied directly by JS based on the saved theme setting, demonstrating
+   that stored data can drive real UI, not just sit unused */
+body.theme-dark {
+  background: #1a1a1a;
+  color: #eee;
+}
+
+body.theme-dark .panel {
+  border-color: #444;
+}
+
+pre#storage-display {
+  background: #111;
+  color: #86efac;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-family: monospace;
+}

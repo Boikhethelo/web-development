@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01 — Troubleshooting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- This page has three buttons, each deliberately triggers a different
+       error type. Click each one, then open DevTools (F12) -> Console and
+       read what shows up before reading demo.js. -->
+  <h1>Troubleshooting Demo</h1>
+  <p>Open the console (F12) before clicking anything below.</p>
+
+  <button id="btn-syntax-note">About SyntaxError (see comment in demo.js)</button>
+  <button id="btn-reference">Trigger a ReferenceError</button>
+  <button id="btn-type">Trigger a TypeError</button>
+  <button id="btn-caught">Trigger a caught error (try/catch)</button>
+
+  <div id="output">Console output will also appear here.</div>
+
+  <!-- external script, loaded after the DOM so it can safely find the buttons above -->
+  <script src="demo.js" defer></script>
+</body>
+</html>

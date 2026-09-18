@@ -1,0 +1,35 @@
+/* style.css — Cookies demo */
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.panel {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+input {
+  padding: 0.4rem;
+  margin-right: 0.5rem;
+}
+
+button {
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  margin-right: 0.4rem;
+}
+
+pre#cookie-display {
+  background: #111;
+  color: #7dd3fc;      /* light blue, distinct from the green "terminal" used in folder 01 */
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-family: monospace;
+  min-height: 1.5rem;
+}

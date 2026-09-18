@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>12 — Client-Side Storage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Client-Side Storage Demo</h1>
+  <p>Change a setting, then reload the page — it should still be applied.</p>
+
+  <div class="panel">
+    <label for="theme-select">Theme</label>
+    <select id="theme-select">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+
+    <label for="font-size-input">Font size: <span id="font-size-value"></span>px</label>
+    <input type="range" id="font-size-input" min="12" max="24" step="1">
+
+    <button id="reset-btn">Reset to defaults</button>
+  </div>
+
+  <div class="panel">
+    <h2>What's actually stored</h2>
+    <pre id="storage-display"></pre>
+  </div>
+
+  <script src="demo.js" defer></script>
+</body>
+</html>

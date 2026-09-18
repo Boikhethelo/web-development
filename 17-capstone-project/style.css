@@ -1,0 +1,160 @@
+/* style.css — Capstone Daily Dashboard */
+
+:root {
+  /* CSS custom properties — one place to change the whole palette,
+     and JS toggles the "dark" class below to swap which set applies */
+  --bg: #f4f5f7;
+  --panel-bg: #ffffff;
+  --text: #1f2933;
+  --accent: #2563eb;
+  --border: #e2e5ea;
+}
+
+body.dark {
+  --bg: #14161a;
+  --panel-bg: #1f232a;
+  --text: #e6e8eb;
+  --accent: #60a5fa;
+  --border: #2c313a;
+}
+
+* {
+  box-sizing: border-box; /* padding/border included in element width everywhere, avoids layout surprises */
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 2rem 1rem;
+  transition: background 0.2s ease, color 0.2s ease; /* smooth theme switch instead of a hard flash */
+}
+
+header {
+  max-width: 900px;
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+#greeting {
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+#theme-toggle {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--panel-bg);
+  color: var(--text);
+  cursor: pointer;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* responsive columns, no media queries needed */
+  gap: 1rem;
+}
+
+.panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.panel input,
+.panel button {
+  font: inherit; /* form elements don't inherit font by default — this fixes that */
+}
+
+.panel input[type="text"] {
+  padding: 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.panel button {
+  padding: 0.45rem 0.9rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.panel button.secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.weather-temp {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0.1rem 0;
+}
+
+.weather-place {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.quote-text {
+  font-style: italic;
+  min-height: 3rem;
+}
+
+.quote-author {
+  text-align: right;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+ul#notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+}
+
+ul#notes-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+ul#notes-list li.done span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.status-text {
+  font-size: 0.85rem;
+  color: #888;
+  min-height: 1.1rem;
+}
+
+.status-text.error {
+  color: #ef4444;
+}

@@ -1,0 +1,38 @@
+/* style.css — Working with APIs demo */
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.status {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.status.error {
+  color: #b91c1c;      /* red only when something actually failed */
+}
+
+ul#post-list {
+  list-style: none;    /* removes default bullet points */
+  padding: 0;
+}
+
+ul#post-list li {
+  border-bottom: 1px solid #eee;   /* thin divider between list rows */
+  padding: 0.6rem 0;
+}
+
+ul#post-list li strong {
+  display: block;    /* forces the title onto its own line above the body text */
+  margin-bottom: 0.2rem;
+}

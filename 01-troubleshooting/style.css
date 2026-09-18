@@ -1,0 +1,31 @@
+/* style.css — Troubleshooting demo
+   This page exists to give you real errors to read, so the CSS just needs
+   to make the output area easy to scan. */
+
+body {
+  font-family: system-ui, sans-serif; /* system-ui = use the OS's default UI font, no download needed */
+  max-width: 700px;                   /* keeps line length readable */
+  margin: 2rem auto;                  /* auto left/right margin centers the block */
+  padding: 0 1rem;
+}
+
+h1 {
+  color: #222;
+}
+
+button {
+  padding: 0.5rem 1rem;   /* top/bottom, then left/right — shorthand order */
+  margin: 0.25rem 0.5rem 0.25rem 0; /* top right bottom left, spaces buttons apart */
+  cursor: pointer;        /* shows a hand icon so it's obvious it's clickable */
+}
+
+#output {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #111;       /* dark background so it visually reads as a "console" */
+  color: #0f0;             /* classic terminal green text */
+  font-family: monospace;  /* fixed-width font, easier to scan logged values */
+  border-radius: 6px;
+  min-height: 3rem;
+  white-space: pre-wrap;   /* preserves line breaks/spacing in logged text */
+}

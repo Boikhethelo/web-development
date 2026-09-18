@@ -1,0 +1,43 @@
+/* style.css — Events demo */
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.zone {
+  border: 2px dashed #999;   /* dashed border signals "interact with me" */
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  transition: background-color 0.2s ease; /* smooth colour change instead of an instant snap */
+}
+
+/* :hover only applies while the mouse is over the element —
+   pairs conceptually with the mouseenter/mouseleave JS events below */
+.zone:hover {
+  background-color: #f0f4ff;
+}
+
+input[type="text"] {
+  padding: 0.4rem;
+  width: 60%;
+}
+
+#key-log,
+#click-count {
+  font-weight: bold;
+  color: #1d4ed8;
+}
+
+form {
+  margin-top: 1rem;
+}
+
+.error-text {
+  color: #b91c1c;    /* red, reserved specifically for validation errors */
+  font-size: 0.9rem;
+}

@@ -1,0 +1,47 @@
+/* style.css — DOM manipulation demo */
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+#todo-form {
+  display: flex;      /* input and button sit side by side */
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#todo-input {
+  flex: 1;             /* grows to fill available space, button keeps its natural width */
+  padding: 0.5rem;
+}
+
+ul#todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+ul#todo-list li {
+  display: flex;
+  justify-content: space-between;  /* pushes the delete button to the far right */
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* applied/removed via classList.toggle in demo.js, not written directly in HTML */
+li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+li button.delete-btn {
+  background: #fee2e2;
+  border: none;
+  color: #b91c1c;
+  border-radius: 4px;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+}

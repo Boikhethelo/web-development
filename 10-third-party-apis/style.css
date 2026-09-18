@@ -1,0 +1,38 @@
+/* style.css — Third-party API demo (Open-Meteo, no key required) */
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+#city-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#city-input {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.weather-card {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff); /* soft sky-blue gradient, weather-themed */
+}
+
+.weather-card .temp {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.weather-card .desc {
+  color: #555;
+}
+
+.status.error {
+  color: #b91c1c;
+}

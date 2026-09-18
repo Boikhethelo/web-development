@@ -1,0 +1,33 @@
+/* style.css — Timeouts and intervals demo */
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+#countdown {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 1rem 0;
+  color: #dc2626;
+}
+
+/* Applied via JS in the last few seconds to draw attention — a small,
+   deliberate use of CSS animation triggered by a setInterval tick */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+#countdown.urgent {
+  animation: pulse 0.5s ease-in-out infinite;
+}

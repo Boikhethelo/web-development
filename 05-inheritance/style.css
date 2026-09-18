@@ -1,0 +1,36 @@
+/* style.css — Inheritance demo */
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.zoo {
+  display: grid;                          /* grid lets us line items up in columns easily */
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.animal-card {
+  border-left: 4px solid #16a34a;   /* left accent border, colour varies by species below */
+  padding: 0.75rem 1rem;
+  background: #f9fafb;
+  border-radius: 0 8px 8px 0;        /* only round the corners away from the accent border */
+}
+
+/* Attribute selector: targets any element with data-species="dog" */
+.animal-card[data-species="dog"] { border-left-color: #d97706; }
+.animal-card[data-species="cat"] { border-left-color: #7c3aed; }
+
+.animal-card h3 {
+  margin: 0 0 0.25rem 0;
+  text-transform: capitalize;  /* makes "dog" display as "Dog" without changing the data */
+}
+
+.animal-card p {
+  margin: 0.15rem 0;
+  font-size: 0.9rem;
+  color: #444;
+}

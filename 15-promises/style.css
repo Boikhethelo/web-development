@@ -1,0 +1,34 @@
+/* style.css — Promises demo */
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.state {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+/* Colour-coded to match the three promise states from the README exactly */
+.state.pending   { background: #fef3c7; color: #92400e; }
+.state.fulfilled { background: #dcfce7; color: #166534; }
+.state.rejected  { background: #fee2e2; color: #991b1b; }
+
+#log {
+  margin-top: 1rem;
+  font-family: monospace;
+  white-space: pre-wrap;
+}

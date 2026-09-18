@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03 — Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Events Demo</h1>
+
+  <!-- click event, with a running counter -->
+  <div class="zone" id="click-zone">
+    Click me. Times clicked: <span id="click-count">0</span>
+  </div>
+
+  <!-- input event, fires on every keystroke -->
+  <div class="zone">
+    Type here: <input type="text" id="key-input">
+    <p>Live copy: <span id="key-log"></span></p>
+  </div>
+
+  <!-- submit event, with preventDefault so the page doesn't reload -->
+  <form id="signup-form">
+    <input type="email" id="email-input" placeholder="email@example.com">
+    <button type="submit">Subscribe</button>
+    <p class="error-text" id="form-error"></p>
+  </form>
+
+  <script src="demo.js" defer></script>
+</body>
+</html>

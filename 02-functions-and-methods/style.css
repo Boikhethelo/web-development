@@ -1,0 +1,40 @@
+/* style.css — Functions & Methods demo */
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  line-height: 1.5; /* extra space between lines makes longer output easier to read */
+}
+
+.card {
+  border: 1px solid #ddd;      /* thin border to visually separate each demo block */
+  border-radius: 8px;          /* rounded corners, softer look */
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card h2 {
+  margin-top: 0;               /* removes default top margin so it hugs the card edge */
+  font-size: 1.1rem;
+  color: #333;
+}
+
+input {
+  padding: 0.4rem;
+  margin-right: 0.5rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+button {
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #0a6b2b; /* green — signals "this is the output", distinct from the label above it */
+}
