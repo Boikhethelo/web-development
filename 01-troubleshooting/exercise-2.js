@@ -20,8 +20,14 @@ const users = [
 ];
 
 function getUserEmail(id) {
-  const user = users.find((u) => u.id === id);
-  return user.email; // <- this line throws if `user` is undefined
+  try{
+    const user = users.find((u) => u.id === id);
+    return user.email;
+  }catch{
+    console.log("Error getting user", id);
+  }
+
+  // return user.email; // <- this line throws if `user` is undefined
 }
 
 // Try both of these once you've added the try/catch:
