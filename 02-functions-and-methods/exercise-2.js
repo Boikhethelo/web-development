@@ -9,13 +9,14 @@
  */
 
 function formatPrice(amount, currency) {
-  // your code here
+  return currency ? `${amount} ${currency}` : `${amount} USD`;
 }
 
-function sumAll() {
-  // your code here — use `...numbers` in the parameter list above
+function sumAll(...numbers) { //...numbers is a rest parameter allowing for individual numbers
+
+    return numbers.reduce((sum, number) => sum + number, 0);
 }
 
-// console.log(formatPrice(19.99));        // "19.99 USD"
-// console.log(formatPrice(50, "ZAR"));     // "50 ZAR"
-// console.log(sumAll(1, 2, 3, 4));         // 10
+ console.log(formatPrice(19.99));        // "19.99 USD"
+ console.log(formatPrice(50, "ZAR"));     // "50 ZAR"
+ console.log(sumAll(1, 2, 3, 4));         // 10

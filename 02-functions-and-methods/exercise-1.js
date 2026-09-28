@@ -9,8 +9,8 @@
  */
 
 function calculateBMI(weightKg, heightM) {
-  // your code here
+  return (weightKg / (heightM * heightM)).toFixed(1);
 }
 
-// console.log(calculateBMI(70, 1.75)); // expect 22.9
-// console.log(calculateBMI(90, 1.8));  // expect 27.8
+ console.log(calculateBMI(70, 1.75)); // expect 22.9
+ console.log(calculateBMI(90, 1.8));  // expect 27.8

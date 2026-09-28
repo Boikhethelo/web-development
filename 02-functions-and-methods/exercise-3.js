@@ -17,8 +17,20 @@ const cart = {
     { name: "Monitor", price: 150, qty: 1 },
   ],
   // add your methods here
+  total(){
+    return this.items.reduce((sum, item) => item.price * item.qty, 0);
+  },
+
+  itemNames(){
+    return this.items.map(item => item.name);
+  },
+
+  expensiveItems(threshold) {
+    return this.items.filter(item => item.price > threshold);
+  }
+
 };
 
-// console.log(cart.total());              // 235
-// console.log(cart.itemNames());          // ["Keyboard", "Mouse", "Monitor"]
-// console.log(cart.expensiveItems(40));   // Keyboard + Monitor objects
+ console.log(cart.total());              // 235
+ console.log(cart.itemNames());          // ["Keyboard", "Mouse", "Monitor"]
+ console.log(cart.expensiveItems(40));   // Keyboard + Monitor objects
