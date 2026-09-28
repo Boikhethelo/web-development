@@ -21,12 +21,38 @@ class Shape {
   describe() {
     return `${this.name} has an area of ${this.area().toFixed(2)}`;
   }
+
+  area(){
+
+  }
 }
 
-// class Rectangle extends Shape { ... }
-// class Circle extends Shape { ... }
+class Rectangle extends Shape {
+  constructor(width, height) {
+    super("Rectangle");
+    this.width = width;
+    this.height = height;
 
-// const r = new Rectangle(4, 5);
-// const c = new Circle(3);
-// console.log(r.describe()); // "Rectangle has an area of 20.00"
-// console.log(c.describe()); // "Circle has an area of 28.27"
+  }
+  area(){
+    return this.width * this.height;
+  }
+}
+class Circle extends Shape {
+  constructor(radius) {
+    super("Circle");
+    this.radius = radius;
+
+  }
+
+  area(){
+    return Math.PI * this.radius * this.radius;
+  }
+
+
+}
+
+const r = new Rectangle(4, 5);
+const c = new Circle(3);
+ console.log(r.describe()); // "Rectangle has an area of 20.00"
+ console.log(c.describe()); // "Circle has an area of 28.27"

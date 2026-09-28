@@ -18,7 +18,15 @@ class Employee {
   }
 }
 
-// class Manager extends Employee { ... }
+class Manager extends Employee {
+  constructor(name, salary, teamSize) {
+    super(name, salary);
+    this.teamSize = teamSize || 0;
+  }
+  describe() {
+    return `${super.describe()}, manages a team of ${this.teamSize}`;
+  }
+}
 
-// const m = new Manager("Alex", 60000, 4);
-// console.log(m.describe()); // "Alex earns 60000, manages a team of 4"
+ const m = new Manager("Alex", 60000, 4);
+ console.log(m.describe()); // "Alex earns 60000, manages a team of 4"
