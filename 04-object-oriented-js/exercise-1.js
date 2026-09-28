@@ -13,11 +13,33 @@
  */
 
 class BankAccount {
-  // your code here
+    #balance;
+  constructor(owner, balance){
+      this.owner = owner;
+      this.#balance = balance;
+  }
+
+  deposit(amount){
+      this.#balance += amount;
+  }
+
+  withdraw(amount){
+      if(amount > this.#balance){
+          console.error("You don't have any balance!");
+      }else{
+          this.#balance -= amount;
+      }
+  }
+
+  getBalance(){
+      return this.#balance;
+  }
 }
 
-// const acc = new BankAccount("Mogs", 100);
-// acc.deposit(50);
-// console.log(acc.getBalance()); // 150
-// acc.withdraw(500);              // should log an error, balance unaffected
-// console.log(acc.getBalance()); // still 150
+
+
+ const acc = new BankAccount("Mogs", 100);
+ acc.deposit(50);
+ console.log(acc.getBalance()); // 150
+ acc.withdraw(500);              // should log an error, balance unaffected
+ console.log(acc.getBalance()); // still 150

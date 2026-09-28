@@ -19,7 +19,7 @@ const counter = {
   },
   logNameAfterDelay() {
     const detachedMethod = this.sayName;
-    setTimeout(detachedMethod, 100); // logs "undefined" as written — fix below
+    setTimeout(() => detachedMethod.call(this), 100); // logs "undefined" as written — fix below
   },
 };
 
