@@ -36,3 +36,8 @@ ul#post-list li strong {
   display: block;    /* forces the title onto its own line above the body text */
   margin-bottom: 0.2rem;
 }
+
+.done {
+  text-decoration: line-through;
+  color: blue;
+}

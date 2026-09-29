@@ -15,7 +15,34 @@
  */
 
 async function loadTodos() {
-  // your code here
+    const results = [];
+    let status = 'Loading...';
+    try{
+        const response = await fetch("https://jsonplaceholder.typicode.com/todos?_limit=5");
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        const todos = await response.json();
+        const container = document.getElementById("todo-container") || document.body;
+
+        todos.forEach((todo) => {
+            const p = document.createElement("p");
+            p.textContent = todo.title;
+            if(todo.completed){
+                p.classList.add("done");
+            }
+
+            container.appendChild(p);
+            results.push(todo);
+
+
+
+        })
+        status = 'Loaded';
+        return { status, results }
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 loadTodos();

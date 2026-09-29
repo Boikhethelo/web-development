@@ -13,8 +13,27 @@
  */
 
 async function loadUser(id) {
-  // your code here
+    try{
+        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+        if(!response.ok) {
+            throw new Error(response.statusText);
+        }
+
+        const data = await response.json();
+        console.log(data.name);
+        console.log(data.email);
+
+
+
+    }catch(error){
+        console.log(error);
+    }
+
+
+
+
+
 }
 
-// loadUser(1);
-// loadUser(9999);
+loadUser(1);
+loadUser(9999);
