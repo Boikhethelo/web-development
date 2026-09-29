@@ -22,5 +22,18 @@ const button = document.getElementById("search-btn");
 const result = document.getElementById("search-result");
 
 button.addEventListener("click", async () => {
-  // your code here
+    const id = input.value;
+
+    try{
+        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+        if (!response.ok) throw new Error(response.statusText);
+        const post = await response.json();
+
+        result.textContent = post.company.name;
+
+
+
+    }catch(e){
+        console.error(e);
+    }
 });
