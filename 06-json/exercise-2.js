@@ -14,4 +14,15 @@
  *    (log true/false)
  */
 
-// your code here
+const settings = {
+    theme: "dark",
+    fontSize: 4,
+    notification: false,
+
+};
+
+const settingsString = JSON.stringify(settings);
+const restoredSettings = JSON.parse(settingsString);
+
+console.log(restoredSettings.theme === settings.theme);
+

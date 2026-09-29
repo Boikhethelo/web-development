@@ -10,8 +10,9 @@
 
 const student = { name: "Mogs", year: 2, courses: ["Java", "Flutter"] };
 
-// your code here for TODO 1
+console.log(JSON.stringify(student, null,2));
 
-const brokenJson = "{name: 'Mogs', year: 2,}";
+const brokenJson = {name: "mogs", year: 2};
+console.log(JSON.stringify(brokenJson, null,2));
 
-// your code here for TODO 2 (edit brokenJson above, then JSON.parse it in a try/catch)
+
