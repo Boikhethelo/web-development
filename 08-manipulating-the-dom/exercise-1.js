@@ -14,4 +14,24 @@
 
 const target = document.getElementById("ex1-target");
 
-// your code here
+const name = document.createElement("h2");
+name.textContent = "mogs";
+
+const path = document.createElement("p");
+path.textContent = "Software Engineering Student";
+
+const stackList = document.createElement("ul");
+const technologies = ["Java", "Flutter", "Docker"];
+
+technologies.forEach((tech) => {
+    const li = document.createElement("li");
+    li.textContent = tech;
+    stackList.appendChild(li);
+});
+
+// Append everything together
+target.append(name, path, stackList);
+
+
+
+

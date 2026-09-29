@@ -19,4 +19,19 @@
 
 const list = document.getElementById("ex2-list");
 
-// your code here
+list.addEventListener("click" , (event) => {
+    const deleteBtn = event.target.closest(".delete-btn");
+    if (deleteBtn) {
+        const li = deleteBtn.closest("li");
+        if (li) {
+            li.remove();
+        }
+        return;
+
+    }
+    const li = event.target.closest("li");
+    if (li && list.contains(li)) {
+        li.classList.toggle("completed");
+    }
+});
+
