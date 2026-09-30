@@ -18,13 +18,21 @@
  */
 
 function getCookie(name) {
-  // your code here
+    const cookies = {};
+    document.cookie.split(";").forEach((pair) => {
+        const [key, value] = pair.split("=").map((s) => s.trim());
+        cookies[key] = value;
+    });
+    return cookies[name] ?? null;
 }
 
 function setCookie(name, value, maxAgeSeconds) {
-  // your code here
+    document.cookie = name + "=" + value + ";max-age=" + maxAgeSeconds + ";path=/";
 }
 
 document.getElementById("visit-btn").addEventListener("click", () => {
-  // your code here
+    const current = getCookie("visitCount");
+    const count = current === null ? 1 : parseInt(current, 10) + 1;
+    setCookie("visitCount", count, 86400);
+    document.getElementById("visit-message").textContent = `You've visited ${count} times`;
 });

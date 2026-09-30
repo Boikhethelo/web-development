@@ -23,14 +23,49 @@ const STORAGE_KEY = "notes";
 
 function loadNotes() {
   // your code here — return an array
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return JSON.parse(raw) ? JSON.parse(raw) : [];
+
 }
 
 function saveNotes(notes) {
-  // your code here
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+
 }
 
 function renderNotes(notes) {
   // your code here — rebuild #note-list from the notes array
+    const noteList = document.getElementById("note-list");
+    noteList.innerHTML = "";
+
+    notes.forEach((note, index) => {
+        const li = document.createElement("li");
+        li.textContent = note;
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "x";
+        deleteBtn.addEventListener("click", () => {
+            notes.splice(index, 1);
+            saveNotes(notes);
+            renderNotes(notes);
+        });
+
+        li.appendChild(deleteBtn);
+        noteList.appendChild(li);
+    });
+
 }
 
 // wire up form submit + initial render here
+let notes = loadNotes();
+renderNotes(notes);
+
+document.getElementById("note-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const input = document.getElementById("note-input");
+    notes.push(input.value);
+    saveNotes(notes);
+    renderNotes(notes);
+    input.value = "";
+});
