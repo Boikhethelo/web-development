@@ -14,5 +14,10 @@ const toast = document.getElementById("toast");
 let toastTimeoutId = null;
 
 document.getElementById("toast-btn").addEventListener("click", () => {
-  // your code here
+    toast.textContent = "saved!";
+    clearTimeout(toastTimeoutId)
+    toastTimeoutId = setTimeout(() => {
+       toast.textContent = "";
+    } , 2000)
+
 });
