@@ -12,12 +12,19 @@
 
 function checkPasswordStrength(password) {
   // your code here — return new Promise((resolve, reject) => { ... })
+    return new Promise((resolve, reject) => {
+        if(password.length >= 8){
+            resolve("strong");
+        }else{
+            reject(new Error("Password must be 8 characters"));
+        }
+    })
 }
 
-// checkPasswordStrength("hunter2")
-//   .then((result) => console.log("Result:", result))
-//   .catch((error) => console.log("Error:", error.message));
+checkPasswordStrength("hunter2")
+  .then((result) => console.log("Result:", result))
+  .catch((error) => console.log("Error:", error.message));
 
-// checkPasswordStrength("verysecurepassword")
-//   .then((result) => console.log("Result:", result))
-//   .catch((error) => console.log("Error:", error.message));
+checkPasswordStrength("verysecurepassword")
+  .then((result) => console.log("Result:", result))
+  .catch((error) => console.log("Error:", error.message));

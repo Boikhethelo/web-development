@@ -18,6 +18,28 @@
 
 function loadThreePosts() {
   // your code here
+    const threePost = [1,2,3];
+
+    // 1. Three fetch promises, all started immediately
+    const fetchPromises = ids.map((id) =>
+        fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    );
+
+    // 2. Wait for all three responses
+    // 3. Parse each response's body (also returns promises)
+    // 4. Log the titles
+
+
+    Promise.all(fetchPromises)
+        .then((responses) => Promise
+        .all(responses.map((res) => res
+        .json())))
+        .then((posts) => {posts
+        .forEach((post) => console.log(post.title));})
+        .catch((error) => console.log("Error:", error.message));
+
+
+
 }
 
-// loadThreePosts();
+loadThreePosts();
